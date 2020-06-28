@@ -1,0 +1,37 @@
+name: release
+
+# Below, replace `never` by `master` or the branch in which you
+# want to release the package from.
+#
+# But preferably, one should add `tags` or `release` as it is
+# not preferable to have a pzpi release on every push in the
+# master.
+on:
+  push:
+    branches:
+      - never
+
+jobs:
+  release:
+    name: Build and publish Python 🐍 packages 📦 to PyPI
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7]
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup Python
+      uses: actions/setup-python@master
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install package
+      run: |
+        pip install .
+    - name: Build PyPI package
+      run: |
+        python setup.py sdist
+        python setup.py bdist_wheel
+    - name: Publish distribution 📦 to PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        password: ${{ secrets.pypi_password }}
