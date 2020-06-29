@@ -19,9 +19,41 @@ or if you are a developer
 ```bash
 python setup.py develop --user
 ```
-To generate the documentation, go inside the [doc](https://github.com/Radonirinaunimi/python-template/tree/master/doc) folder and run the following command:
+To generate the documentation (this requires the installation of `sphinx` and `shpinx_rtd_theme` in your local machine), go inside the [doc](https://github.com/Radonirinaunimi/python-template/tree/master/doc) folder and run the following command:
 ```bash
 make html
 ```
-Before pushing to the github, ...
-Explanation about generating tokes, ...
+and to view the rendered document, run
+```bash
+make view
+```
+Before pushing to the github, make sure to modify the actions in the [workflows](https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/) folder. For instance, one can replace the following part
+```yaml
+on:
+  push:
+    branches:
+      - never
+```
+by
+```yaml
+on: [push]
+```
+to run the actions whenever a new implementation is pushed on any *branches*; or the the following to be *branch* specific (here, for instance, master):
+```yaml
+on:
+  push:
+    branches:
+      - master
+```
+Finally, the following part must be replaced by your own **token**,
+```yaml
+    - name: Deploy 🚀
+      ...
+        ACCESS_TOKEN: ${{ secrets.YOUR_TOKEN }}
+```
+Check this [documentation](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to learn how to generate tokens, and the [following](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) on how to add tokens to *secrets*.
+
+#### Side notes
+
+* To check that your python codes are properly formatted, you can use [pylint](https://www.pylint.org/) (which is a python linter) whose configuration is defeined in [.pylintrc](https://github.com/Radonirinaunimi/python-template/blob/master/.pylintrc). This can be modified to fit you specific needs. Then, just run `pylint <python_file.py>` on the python file you want to check.
+* The test of the modules and the coverage can be locally checked by just running `pytest --cov=<package_name> tests/`.
