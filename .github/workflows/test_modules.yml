@@ -1,3 +1,6 @@
+# Check the following documentation for further details
+# https://github.com/codecov/codecov-action
+
 name: pytest
 
 # The following chooses at which steps this `action`
@@ -38,11 +41,12 @@ jobs:
     - name: Test code coverage
       run: |
         pip install .[tests]
-        pytest --cov-report=xml
+        pytest --cov=./ --cov-report=xml
     - name: Upload coverage report
       uses: codecov/codecov-action@v1
       with:
-        token: ${{ secrets.YOUR_TOKEN }}
+        # # For private repository only
+        # token: ${{ secrets.YOUR_TOKEN }}
         file: ./coverage.xml
         flags: unittests
         name: codecov-umbrella

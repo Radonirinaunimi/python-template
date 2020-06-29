@@ -35,7 +35,8 @@ Before pushing to the github, make sure to modify the actions in the [workflows]
 ```
 Check this [documentation](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to learn how to generate tokens, and the [following](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) on how to add tokens to *secrets*.
 
-#### Side notes
+#### Troubleshooting and Side notes
 
+* The documentation might not be correctly compiled locally, although it is correctly deployed in the github. Indeed, the compilation might arise the following warning `WARNING: html_static_path entry '_static' does not exist`. Just ignore it if that is the case. (investigate this more)
 * To check that your python codes are properly formatted, you can use [pylint](https://www.pylint.org/) (which is a python linter) whose configuration is defeined in [.pylintrc](https://github.com/Radonirinaunimi/python-template/blob/master/.pylintrc). This can be modified to fit you specific needs. Then, just run `pylint <python_file.py>` on the python file you want to check.
 * The test of the modules and the coverage can be locally checked by just running `pytest --cov=<package_name> tests/`.
