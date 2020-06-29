@@ -27,25 +27,7 @@ and to view the rendered document, run
 ```bash
 make view
 ```
-Before pushing to the github, make sure to modify the actions in the [workflows](https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/) folder. For instance, one can replace the following part
-```yaml
-on:
-  push:
-    branches:
-      - never
-```
-by
-```yaml
-on: [push]
-```
-to run the actions whenever a new implementation is pushed on any *branches*; or the the following to be *branch* specific (here, for instance, master):
-```yaml
-on:
-  push:
-    branches:
-      - master
-```
-Finally, the following part must be replaced by your own **token**,
+Before pushing to the github, make sure to modify the actions in the [workflows](https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/) folder. Specifically, one must replace the value `never` in the *branches* entry. For instance, one can choose `on: push` to run the actions whenever a new implementation is pushed on any *branches*; or to be *branch* specific by replacing `never` by `master` for instance. Finally, the following part must be replaced by your own **token**,
 ```yaml
     - name: Deploy 🚀
       ...
