@@ -27,13 +27,15 @@ and to view the rendered document, run
 ```bash
 make view
 ```
-Before pushing to the github, make sure to modify the actions in the [workflows](https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/) folder. Specifically, one must replace the value `never` in the *branches* entry. For instance, one can choose `on: push` to run the actions whenever a new implementation is pushed on any *branches*; or to be *branch* specific by replacing `never` by `master` for instance. In order to deploy the documentation, the following part must be replaced by your own **token**,
+Before pushing to the github, make sure to modify the actions in the [workflows](https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/) folder. Specifically, one must replace the value `never` in the *branches* entry. For instance, one can choose `on: push` to run the actions whenever a new implementation is pushed on any *branches*; or to be *branch* specific by replacing `never` by `master` for instance.
+
+In order to deploy the documentation, the following part must be replaced by your own **token**,
 ```yaml
     - name: Deploy 🚀
       ...
         ACCESS_TOKEN: ${{ secrets.YOUR_TOKEN }}
 ```
-Check this [documentation](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to learn how to generate tokens, and the [following](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) on how to add tokens to *secrets*. Th PyPI *token* has to be generated from [here](https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/) and added to the repository in the same way as for the documentation.
+Check this [documentation](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to learn how to generate github-tokens, and the [following](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) on how to add tokens to *secrets*. Th *PyPI token* has to be generated from [here](https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/) and added to the repository in the same way as for the documentation. Similarly, the *Codecov token* can be generated from [here](https://codecov.io/gh) for a specific repository.
 
 #### Troubleshooting and Side notes
 

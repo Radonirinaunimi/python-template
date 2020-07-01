@@ -29,6 +29,7 @@ jobs:
         pip install .
     - name: Build PyPI package
       run: |
+        pip install wheel
         python setup.py sdist
         python setup.py bdist_wheel
     - name: Publish distribution 📦 to PyPI

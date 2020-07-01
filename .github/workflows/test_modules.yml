@@ -45,8 +45,7 @@ jobs:
     - name: Upload coverage report
       uses: codecov/codecov-action@v1
       with:
-        # # For private repository only
-        # token: ${{ secrets.YOUR_TOKEN }}
+        token: ${{ secrets.YOUR_TOKEN }}
         file: ./coverage.xml
         flags: unittests
         name: codecov-umbrella
