@@ -21,7 +21,7 @@ help:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
-	sphinx-apidoc -o ./source/modules/pycompressor "$(PACKAGEDIR)" "$(PACKAGETESTDIR)"
+	sphinx-apidoc -o ./source/modules/<package_name> "$(PACKAGEDIR)" "$(PACKAGETESTDIR)"
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 view: html
