@@ -11,7 +11,7 @@
 
 #### How to use this template
 
-In order to use this template, first, one has to replace `<package_name>` in the following files [setup.py](https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L16), [Makefile](https://github.com/Radonirinaunimi/python-template/blob/master/doc/Makefile#L12), [conf.py](https://github.com/Radonirinaunimi/python-template/blob/master/doc/source/conf.py#L14) by the **name** of the package. Then, add the requierement the package is depending to [here](https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L23). Essentially, these the only things one need to package the distribution. In oder to install the package, run the following on the terminal:
+In order to use this template, first, click on [use this template](https://github.com/Radonirinaunimi/python-template/generate). Then, replace `<package_name>` in the following files [setup.py](https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L16), [Makefile](https://github.com/Radonirinaunimi/python-template/blob/master/doc/Makefile#L12), [conf.py](https://github.com/Radonirinaunimi/python-template/blob/master/doc/source/conf.py#L14) by the **name** of the package. Then, add the requierement the package is depending to [here](https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L23). Essentially, these the only things one need to package the distribution. In oder to install the package, run the following on the terminal:
 ```bash
 python setup.py install --user
 ```
@@ -27,7 +27,7 @@ and to view the rendered document, run
 ```bash
 make view
 ```
-Before pushing to the github, make sure to modify the actions in the [workflows](https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/) folder. Specifically, one must replace the value `never` in the *branches* entry. For instance, one can choose `on: push` to run the actions whenever a new implementation is pushed on any *branches*; or to be *branch* specific by replacing `never` by `master` for instance.
+Before pushing to the github , make sure to modify the actions in the [workflows](https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/) folder. Specifically, one must replace the value `never` in the *branches* entry. For instance, one can choose `on: push` to run the actions whenever a new implementation is pushed on any *branches*; or to be *branch* specific by replacing `never` by `master` for instance.
 
 In order to deploy the documentation, the following part must be replaced by your own **token**,
 ```yaml
@@ -40,5 +40,12 @@ Check this [documentation](https://help.github.com/en/github/authenticating-to-g
 #### Troubleshooting and Side notes
 
 * The documentation might not be correctly compiled locally, although it is correctly deployed in the github. Indeed, the compilation might arise the following warning `WARNING: html_static_path entry '_static' does not exist`. Just ignore it if that is the case. (investigate this more)
-* To check that your python codes are properly formatted, you can use [pylint](https://www.pylint.org/) (which is a python linter) whose configuration is defeined in [.pylintrc](https://github.com/Radonirinaunimi/python-template/blob/master/.pylintrc). This can be modified to fit you specific needs. Then, just run `pylint <python_file.py>` on the python file you want to check.
+* To check that your python codes are properly formatted, you can use [pylint](https://www.pylint.org/) (which is a python linter) whose configuration is defined in [.pylintrc](https://github.com/Radonirinaunimi/python-template/blob/master/.pylintrc). This can be modified to fit you specific needs. Then, just run `pylint <python_file.py>` on the python file you want to check.
 * The test of the modules and the coverage can be locally checked by just running `pytest --cov=<package_name> tests/`.
+
+#### Useful links
+
+* Awesome python: [github](https://github.com/vinta/awesome-python), [webpage](https://awesome-python.com/)
+* All algorithms implemented in python: [github](https://github.com/TheAlgorithms/Python)
+
+#### Projects using this template
