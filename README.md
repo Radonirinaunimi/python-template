@@ -47,6 +47,7 @@ Check this [documentation](https://help.github.com/en/github/authenticating-to-g
 
 * Awesome python: [github](https://github.com/vinta/awesome-python), [webpage](https://awesome-python.com/)
 * All algorithms implemented in python: [github](https://github.com/TheAlgorithms/Python)
+* PyGithub: Typed interactions with the GitHub API v3 [github](https://github.com/PyGithub/PyGithub), [webpage](https://pygithub.readthedocs.io/)
 
 #### Projects using this template
 
