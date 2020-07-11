@@ -7,11 +7,13 @@ assignees: ''
 ---
 
 ## Description
+
 Add the following description:
 - [ ] What has changed?
 - [ ] What were the motivations for the changes?
 - [ ] Briefly describe what the changes result?
 
 ## Additional info
-If you want to add more information
+
+If you want to add more information.
 
