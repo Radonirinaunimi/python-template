@@ -11,7 +11,7 @@
 
 #### How to use this template
 
-In order to use this template, first, click on [use this template](https://github.com/Radonirinaunimi/python-template/generate). Then, replace `<package_name>` in the following files [setup.py](https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L16), [Makefile](https://github.com/Radonirinaunimi/python-template/blob/master/doc/Makefile#L12), [conf.py](https://github.com/Radonirinaunimi/python-template/blob/master/doc/source/conf.py#L14) by the **name** of the package. Then, add the requierement the package is depending to [here](https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L23). Essentially, these the only things one need to package the distribution. In oder to install the package, run the following on the terminal:
+In order to use this template, first, click on [use this template](https://github.com/Radonirinaunimi/python-template/generate). Then, replace `<package_name>` in the following files [setup.py](https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L16), [Makefile](https://github.com/Radonirinaunimi/python-template/blob/master/doc/Makefile#L12), [test_modules.ml](https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/test_modules.yml), [conf.py](https://github.com/Radonirinaunimi/python-template/blob/master/doc/source/conf.py#L14) by the **name** of the package. Then, add the requierement the package is depending to [here](https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L23). Essentially, these the only things one need to package the distribution. In oder to install the package, run the following on the terminal:
 ```bash
 python setup.py install --user
 ```
