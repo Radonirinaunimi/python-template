@@ -51,4 +51,5 @@ Check this [documentation](https://help.github.com/en/github/authenticating-to-g
 
 #### Projects using this template
 
-- [CheckPwd](https://github.com/Radonirinaunimi/pwnd-check) (as a proof of concept): Python package that checks if your credentials have been leaked to the web. 
+- [CheckPwd](https://github.com/Radonirinaunimi/pwnd-check) (as a proof of concept): Python package that checks if your credentials have been leaked to the web.
+- [Timst](https://github.com/Radonirinaunimi/Style-Transfer) (as a proof of concept): Image style transfer using pyTorch.
