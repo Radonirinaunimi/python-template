@@ -22,11 +22,6 @@ DOCS_REQUIEREMENTS = ["recommonmark", "sphinx_rtd_theme", "sphinxcontrib-bibtex"
 # Dependencies for the packages
 PACKAGE_REQUIEREMENTS = ["numpy", "numba"]
 
-# Check python version
-if sys.version_info < (3, 6):
-    print(f"{PACKAGE} requires Python 3.6 or later", file=sys.stderr)
-    sys.exit(1)
-
 # Read through Readme
 try:
     this_directory = os.path.abspath(os.path.dirname(__file__))
@@ -54,6 +49,7 @@ setup(
     version=get_version(),
     description="<brief description here>",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     author="<lists of authors>",
     author_email="<correspondence email>",
     url="<project url>",
@@ -70,4 +66,6 @@ setup(
         "Topic :: Scientific/Engineering",
         "Topic :: Scientific/Engineering :: Physics",
     ],
+    setup_requires=["wheel"],
+    python_requires='>=3.7'
 )
