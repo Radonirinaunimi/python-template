@@ -1,5 +1,11 @@
-![license](https://img.shields.io/github/license/Radonirinaunimi/python-template?style=flat-square)
-![repo size](https://img.shields.io/github/repo-size/Radonirinaunimi/python-template?style=flat-square)
+<p align="center">
+  <img alt="Logo" src="https://github.com/Radonirinaunimi/python-template/blob/master/logo/logo.png" width=500>
+</p>
+<p align="center">
+  <img alt="License" src="https://img.shields.io/github/license/Radonirinaunimi/python-template?style=flat-square">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Radonirinaunimi/python-template?logo=Github&style=flat-square">
+</p>
+
 ### Python template
 
 **Python-template** serves as a general template to start a python project. It's aim is to automatize the development workflow: from packaging the code, generating documentation, deploying and releasing the package. So far, the development workflow is based on the following steps:
