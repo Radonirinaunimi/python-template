@@ -19,7 +19,7 @@ REQUIREMENTS = (THIS_DIR / "requirements.txt").read_text()
 
 setup(
     name=PACKAGE,
-    version='0.0.1',
+    version='0.1.0-dev',
     description="<brief description here>",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
