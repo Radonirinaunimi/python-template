@@ -29,7 +29,7 @@ jobs:
     # # For Conda, comment the `Setup python` above and
     # # use the following
     # - name: Setup Conda
-    #   uses: goanpeca/setup-miniconda@v1
+    #   uses: conda-incubator/setup-miniconda@v2
     #   with:
     #     python-version: ${{ matrix.python-version }}
     #     auto-update-conda: true
@@ -40,8 +40,8 @@ jobs:
         pip install .
     - name: Test code coverage
       run: |
-        pip install .[tests]
-        pytest --cov=./src/<package_name> --cov-report=xml
+        pip install -r tests-requirements.txt
+        pytest -v tests/ --cov=./src/<package_name> --cov-report=xml
     - name: Upload coverage report
       uses: codecov/codecov-action@v1
       with:
