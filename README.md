@@ -1,18 +1,24 @@
-<p align="center">
-  <img alt="Logo" src="https://github.com/Radonirinaunimi/python-template/blob/master/logo/logo.png" width=500>
-</p>
-<p align="center">
-  <img alt="License" src="https://img.shields.io/github/license/Radonirinaunimi/python-template?style=flat-square">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Radonirinaunimi/python-template?logo=Github&style=flat-square">
-</p>
+<table style="width:100%">
+  <tr>
+    <td rowspan="2" style="width:50px">
+      <img alt="Logo" src="https://github.com/Radonirinaunimi/python-template/blob/master/logo/logo.png" width=50%>
+    </td>
+    <td>
+      <img src="https://img.shields.io/badge/python_template-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+      <img src="https://img.shields.io/badge/LICENSE:_MIT-ED1C24?style=for-the-badge"/>
+    </td>
+  </tr>
+  <tr>
+    <td> 
+      <p align="justify">
+        <b>pytemplate</b> serves as a general template to start a python project. It aims to automate the development workflow: from 
+        packaging the code, generating documentation, versioning, deploying and releasing the package.
+      </p>
+    </td>
+  </tr>
+</table>
 
-## Python template
-
-<p align="justify">
-  <b>pytemplate</b> serves as a general template to start a python project. It's aim is to automatize the
-development workflow: from packaging the code, generating documentation, versioning, deploying and
-releasing the package.
-</p>
+## Description
 
 The development workflow is based on the following steps:
 <ul>
