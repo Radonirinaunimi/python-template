@@ -104,15 +104,15 @@ make view
 
 <p align="justify">
   Semantic versioning is an important part in building packages. For the best practices in tagging versions, refer to the following
-  <a href="https://semver.org/">documentation</a>. As a version management tool, this templates uses <b>bumpversion</b> whose configuration
+  <a href="https://semver.org/">documentation</a>. As a version management tool, this templates uses <b>bump2version</b> whose configuration
   file is defined in .bumpversion.cfg. The current version is <b>0.1.0-dev</b>, and in order to update if, run the following command:
 </p>
 
 ```bash
-bumpversion minor # or major
+bump2version minor # or major
 ```
 
-For more details about the configuration of bumpersion, head on to this <a href="https://github.com/c4urself/bump2version">github repository</a>.
+For more details about the configuration of bump2version, head on to this <a href="https://github.com/c4urself/bump2version">github repository</a>.
 
 
 ## Automating pipeline with github actions
