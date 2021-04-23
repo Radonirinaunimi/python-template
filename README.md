@@ -21,70 +21,161 @@
 ## Description
 
 The development workflow is based on the following steps:
-<ul>
-<li align="justify"> The packaging of the distributions is taken care by the 
-<a href="https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/introduction.html">Distribution Utilities</a>
-(Disutils). This allows users (or developers) to easily install the package
-(or to simulate the installation by adding a symbolic link for easy debug) into a particular environment. </li>
-<li align="justify"> For stability, the modules of the packaged-library can be automatically tested using <b>pytest</b>. This
-helps prevent breaking the code when new features are added. These tests can be run as github-actions
-when the events are triggered. The coverage of the tests can then be assessed afterward; the more modules
-undergo testing the less likely a bug is present. Refer to the web
-<a href="https://docs.pytest.org/en/stable/">documentation</a> for further details on how to use pytest for testing. </li>
-<li align="justify"> The documentation of the modules can be automatically generated from the
-<a href="https://github.com/Radonirinaunimi/python-template/tree/master/doc">doc</a>
-folder. This generates documentation of this <a href="https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/introduction.html">style</a> 
-using <b>sphinx</b>. To familiarize with sphinx, have a look at the following
-<a href="https://www.sphinx-doc.org/en/master/usage/quickstart.html">documentation</a>. </li>
-<li align="justify"> Finally, all of the above can be integrated within github using
-<a href="https://docs.pytest.org/en/stable/">github actions</a>
-<a href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/">CI/CD</a>.
-This allows one to test the package at every push (for instance) and deploys the documentation.
-The follwoing <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions">documentation</a>
-explains the syntax for writting a github action. </li>
-</ul>
+<p align="justify">
+  <b> Packaging </b> 📦
+  The packaging of the distribution is managed by the 
+  <a href="https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/introduction.html">Distribution Utilities</a> (Disutils).
+  This allows users (or developers) to easily install the package (or to simulate the installation by adding a symbolic link for easy debug) 
+  into a particular environment.
+</p>
+
+<p align="justify">
+  <b> Continuous testing </b> 🛠️
+  For stability, the modules of the packaged-library can be automatically tested using <b>pytest</b>. This helps prevent breaking the code 
+  when new features are added. These tests can be run as github-actions when the events are triggered (as will be detailed further). The 
+  coverage of the tests can then be assessed afterward; the more modules undergo testing the less likely bugs occur. Refer to the web
+  <a href="https://docs.pytest.org/en/stable/">documentation</a> for further details on how to use pytest for testing.
+</p>
+
+<p align="justify">
+  <b> Documentation </b> 📚
+  The documentation of nodules is built using the following 
+  <a href="https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/introduction.html">style</a> with <b>sphinx</b>. To 
+  familiarize with sphinx, have a look at the following <a href="https://www.sphinx-doc.org/en/master/usage/quickstart.html">documentation</a>.
+</p>
+
+<p align="justify">
+  <b> Documentation </b> 🚀
+  Finally, all of the above can be integrated within github using <a href="https://docs.pytest.org/en/stable/">github actions</a>
+  <a href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/">CI/CD</a>. This allows one to test the package at every 
+  push (for instance) and deploys the documentation. The follwoing 
+  <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions">documentation</a> explains the syntax for writting 
+  a github action.
+</p>
+
 
 ## How to use this template
 
-In order to use this template, first, click on [use this template](https://github.com/Radonirinaunimi/python-template/generate). Then, replace `<package_name>` in the following files [setup.py](https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L16), [Makefile](https://github.com/Radonirinaunimi/python-template/blob/master/doc/Makefile#L12), [test_modules.ml](https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/test_modules.yml), [conf.py](https://github.com/Radonirinaunimi/python-template/blob/master/doc/source/conf.py#L14) by the **name** of the package. Then, add the requierement the package is depending to [here](https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L23). Essentially, these the only things one need to package the distribution. In oder to install the package, run the following on the terminal:
+### Setting up ⚙️
+
+<p align="justify">
+  In order to use this template, first, click on <a href="https://github.com/Radonirinaunimi/python-template/generate">use this template</a>. 
+  Then, replace all mentions of package_name in the following files <a href="https://github.com/Radonirinaunimi/python-template/blob/master/setup.py#L16">
+  setup.py</a>, <a href="https://github.com/Radonirinaunimi/python-template/blob/master/doc/Makefile#L12">Makefile</a>, 
+  <a href="https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/test_modules.yml">test_modules.yml</a>, 
+  <a href="https://github.com/Radonirinaunimi/python-template/blob/master/doc/source/conf.py#L14">conf.py</a> by the <b>name</b> of the package. 
+  The next step is to add the requierements the package is depending to 
+  <a href="https://github.com/Radonirinaunimi/python-template/blob/master/requirements.txt">requirements.txt</a>. Essentially, these the only things 
+  one need to package the distribution. The package is now ready for installation by running the following:  
+</p>
+
 ```bash
-python setup.py install --user
+python setup.py install [--user]
 ```
-or if you are a developer
+or alternatively (if you are a developer) by adding symbolic links which immediately reflects the changes after every save:
 ```bash
-python setup.py develop --user
+python setup.py develop [--user]
 ```
-To generate the documentation (this requires the installation of `sphinx` and `shpinx_rtd_theme` in your local machine), go inside the [doc](https://github.com/Radonirinaunimi/python-template/tree/master/doc) folder and run the following command:
+
+### Writing and building documentation 📘
+
+<p align="justify">
+  In order to adopt good practices for writing documentation, refer to the <a href="https://docs.python-guide.org/writing/documentation/">following</a>
+  short guidelines. As default, this template uses <b>sphinx</b> as a python documentation tool which (for a local build) requires the installation of
+  <b>sphinx</b> and <b>shpinx_rtd_theme</b>. For a deep dive into the sphinx tool, have a look at
+  <a href="https://www.sphinx-doc.org/en/master/contents.html">this</a> documentation.
+</p>
+  
+<p align="justify">
+  In order to build the documentation in your local machine, go inside the 
+  <a href="https://github.com/Radonirinaunimi/python-template/tree/master/doc">doc</a> folder and run the following command:
+</p>
+
 ```bash
 make html
 ```
-and to view the rendered document, run
+<p> and to view the rendered document, just run: </p>
+
 ```bash
 make view
 ```
-Before pushing to the github , make sure to modify the actions in the [workflows](https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/) folder. Specifically, one must replace the value `never` in the *branches* entry. For instance, one can choose `on: push` to run the actions whenever a new implementation is pushed on any *branches*; or to be *branch* specific by replacing `never` by `master` for instance.
 
-In order to deploy the documentation, the following part must be replaced by your own **token**,
+### Tagging versions 🎉
+
+<p align="justify">
+  Semantic versioning is an important part in building packages. For the best practices in tagging versions, refer to the following
+  <a href="https://semver.org/">documentation</a>. As a version management tool, this templates uses <b>bumpversion</b> whose configuration
+  file is defined in .bumpversion.cfg. The current version is <b>0.1.0-dev</b>, and in order to update if, run the following command:
+</p>
+
+```bash
+bumpversion minor # or major
+```
+
+For more details about the configuration of bumpersion, head on to this <a href="https://github.com/c4urself/bump2version">github repository</a>.
+
+
+## Automating pipeline with github actions
+
+<p align="justify">
+  Before pushing to the github , make sure to modify the actions in the 
+  <a href="https://github.com/Radonirinaunimi/python-template/blob/master/.github/workflows/">workflows</a> folder. Specifically, one must replace 
+  the value <b>never</b> in the <b>branches</b> entry. For instance, one can choose <b>on: push</b> to run the actions whenever a new implementation 
+  is pushed on any <b>branches</b>.
+</p>
+
+<p align="justify">
+  In order to deploy the documentation, the GITHUB_SECRETS must be replaced by your own <b>secrets</b>,
+</p> 
+
 ```yaml
     - name: Deploy 🚀
       ...
-        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.GITHUB_SECRETS }}
 ```
-Check this [documentation](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to learn how to generate github-tokens, and the [following](https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets) on how to add tokens to *secrets*. Th *PyPI token* has to be generated from [here](https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/) and added to the repository in the same way as for the documentation. Similarly, the *Codecov token* can be generated from [here](https://codecov.io/gh) for a specific repository.
 
-## Troubleshooting and Side notes
+<p align="justify">
+  Check this <a href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">documentation</a> to learn how 
+  to generate github-tokens, and the <a href="https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets">
+  following</a> on how to add tokens to <b>secrets</b>. The <b>PyPI token</b> has to be generated from 
+  <a href="https://packaging.python.org/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/">here</a> by creating and
+  account and added to the repository in the same way as for the documentation. Similarly, the <b>Codecov token</b> can be generated from 
+  <a href="https://codecov.io/gh">here</a> for a specific repository.
+</p>
 
-* The documentation might not be correctly compiled locally, although it is correctly deployed in the github. Indeed, the compilation might arise the following warning `WARNING: html_static_path entry '_static' does not exist`. Just ignore it if that is the case. (investigate this more)
-* To check that your python codes are properly formatted, you can use [pylint](https://www.pylint.org/) (which is a python linter) whose configuration is defined in [.pylintrc](https://github.com/Radonirinaunimi/python-template/blob/master/.pylintrc). This can be modified to fit you specific needs. Then, just run `pylint <python_file.py>` on the python file you want to check.
-* The test of the modules and the coverage can be locally checked by just running `pytest --cov=<package_name> tests/`.
 
 ## Useful links
 
-* Awesome python: [github](https://github.com/vinta/awesome-python), [webpage](https://awesome-python.com/)
-* All algorithms implemented in python: [github](https://github.com/TheAlgorithms/Python)
-* PyGithub: Typed interactions with the GitHub API v3 [github](https://github.com/PyGithub/PyGithub), [webpage](https://pygithub.readthedocs.io/)
+<table>
+  <tr>
+    <td> Awesome python </td>
+    <td> <a href="https://github.com/vinta/awesome-python">github</a> | <a href="https://awesome-python.com/)">webpage</a> </td>
+  </tr>
+  <tr>
+    <td> All algorithms implemented in python </td>
+    <td> <a href="https://github.com/TheAlgorithms/Python">github</a> </td>
+  </tr>
+  <tr>
+    <td> PyGithub: Typed interactions with the GitHub API v3 </td>
+    <td> <a href="https://github.com/PyGithub/PyGithub">github</a> | <a href="https://pygithub.readthedocs.io/">webpage</a> </td>
+  </tr>
+</table>
+
 
 ## Projects using this template
 
-- [CheckPwd](https://github.com/Radonirinaunimi/pwnd-check) (as a proof of concept): Python package that checks if your credentials have been leaked to the web.
-- [Timst](https://github.com/Radonirinaunimi/Style-Transfer) (as a proof of concept): Image style transfer using pyTorch.
+With **v.0.0.1** (as a proof of concept):
+<table>
+  <tr>
+    <td> <b>Package</b> </td>
+    <td> <b>Description</b>  </td>
+  </tr>
+  <tr>
+    <td> <a href="https://github.com/Radonirinaunimi/Style-Transfer">Timst</b> </td>
+    <td> Image style transfer using pyTorch. </td>
+  </tr>
+  <tr>
+    <td> <a href="https://github.com/Radonirinaunimi/pwnd-check">CheckPwd</b> </td>
+    <td> Python package that checks if your credentials have been leaked to the web. </td>
+  </tr>
+</table>
