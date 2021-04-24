@@ -45,7 +45,7 @@ The development workflow is based on the following steps:
 </p>
 
 <p align="justify">
-  <b> Documentation </b> 🚀
+  <b> Github actions </b> 🚀
   Finally, all of the above can be integrated within github using <a href="https://docs.pytest.org/en/stable/">github actions</a>
   <a href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/">CI/CD</a>. This allows one to test the package at every 
   push (for instance) and deploys the documentation. The follwoing 
@@ -139,7 +139,7 @@ bump2version minor # or major
 For more details about the configuration of bump2version, head on to this <a href="https://github.com/c4urself/bump2version">github repository</a>.
 
 
-## Automating pipeline with github actions
+## Automating pipeline with github actions 🛡️
 
 <p align="justify">
   Before pushing to the github , make sure to modify the actions in the 
