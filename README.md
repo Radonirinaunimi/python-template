@@ -77,6 +77,30 @@ or alternatively (if you are a developer) by adding symbolic links which immedia
 python setup.py develop [--user]
 ```
 
+### Checking, formatting and testing the code
+
+<p align="justify">
+  Using static code analysis tools can be extremely helpful in terms of checking programming errors and enforcing coding standards. As an analysis tool,
+  this template uses <a href="https://pylint.org/">pylint</a> which is highly customazable. The default configurations are given in the
+  <a href="https://github.com/Radonirinaunimi/python-template/blob/master/.pylintrc">.pylintrc</a> file. To check a given python file, it suffices to
+  run:
+</p>
+
+```bash
+pylint <python_file>.py
+```
+
+<p align="justify">
+  For an automated code formatting, one may also resort to <a href="https://github.com/psf/black">black</a> which is a very high efficient code
+  formatter. Finally, the test of the modules can be performed using <a href="https://docs.pytest.org/en/6.2.x/">pytest</a>. The test files can
+  be put inside the <a href="https://github.com/Radonirinaunimi/python-template/tree/master/tests">tests</a>. Then, to peform the tests, just run:
+</p>
+
+```bash
+pytest <python_file>.py or pytest --cov=<package_name> tests/ (if you want to generare reports)
+```
+
+
 ### Writing and building documentation 📘
 
 <p align="justify">
