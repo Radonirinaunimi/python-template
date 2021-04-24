@@ -45,7 +45,7 @@ The development workflow is based on the following steps:
 </p>
 
 <p align="justify">
-  <b> Github actions </b> 🚀
+  <b> Deploying docs and Publishing to PyPI </b> 🚀
   Finally, all of the above can be integrated within github using <a href="https://docs.pytest.org/en/stable/">github actions</a>
   <a href="https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/">CI/CD</a>. This allows one to test the package at every 
   push (for instance) and deploys the documentation. The follwoing 
