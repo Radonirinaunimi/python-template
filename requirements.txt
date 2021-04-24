@@ -1,0 +1,7 @@
+bump2version
+numpy
+numba
+pytest
+pytest-cov
+sphinx
+sphinx-rtd-theme

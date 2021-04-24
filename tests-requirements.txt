@@ -1,0 +1,6 @@
+pylint
+pygit2
+pytest
+pytest-cov
+pytest-env
+semver
