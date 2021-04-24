@@ -1,7 +1,7 @@
 <table style="width:100%">
   <tr>
     <td rowspan="2" style="width:50px">
-      <img alt="Logo" src="https://github.com/Radonirinaunimi/python-template/blob/master/logo/logo.png" width=50%>
+      <img alt="Logo" src="https://github.com/Radonirinaunimi/python-template/blob/master/logo/logo.png" width=100%>
     </td>
     <td>
       <img src="https://img.shields.io/badge/python_template-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
